@@ -7,6 +7,6 @@ Bellabeat, a wellness technology company, seeks to understand how consumers use 
 ## Data Sources
 Data comes from publicly available Fitbit datasets on Kaggle:
 - [dailyActivity_merged.csv](https://www.kaggle.com/datasets/arashnic/fitbit)
-- [sleepDay_merged.csv](https://www.kaggle.com/datasets/arashnic/fitbit)
+- [hourlyCalories_merged.csv](https://www.kaggle.com/datasets/arashnic/fitbit)
 - [weightLogInfo_merged.csv](https://www.kaggle.com/datasets/arashnic/fitbit)
 
