@@ -1,1 +1,1 @@
-# wellness_technology_casestudy
+# Wellness_Technology_Analysis
