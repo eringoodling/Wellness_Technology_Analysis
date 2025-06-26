@@ -26,5 +26,4 @@ This analysis has used the following Fitbit datasets from Kaggle:
 - ggplot2 for plotting.
 - Git and GitHub for version control.
 
-![Sleep vs Calories Burned](images/sleep_vs_calories.png)
 
