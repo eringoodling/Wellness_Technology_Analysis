@@ -24,7 +24,6 @@ The dataset used in this project is the [Fitbit Fitness Tracker Data](https://ww
 - Calories burned  
 - Sleep patterns  
 - Activity intensity levels  
-- Heart rate (partial)  
 
 Limitations of the data include a small sample size, lack of demographic diversity, and potential bias due to self-selection.
 
@@ -38,5 +37,5 @@ Limitations of the data include a small sample size, lack of demographic diversi
 
 ## Full Case Study
 
-To read the complete case study with visuals and code insights, visit:  
-➡️ [`bellabeat_case_study.md`](bellabeat_case_study.md)
+To read the complete case study with visuals and code insights, visit:
+[`bellabeat_case_study.md`](bellabeat_case_study.md)
