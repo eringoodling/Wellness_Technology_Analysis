@@ -61,43 +61,39 @@ ggplot(data, aes(x = calories, y = total_steps)) +
     y = "Total Steps"
   ) +
   theme_minimal()
+```
 
-![calories vs steps](https://github.com/user-attachments/assets/053af455-1387-4b69-9a5e-48795eb2ca92)
+<img src="https://github.com/user-attachments/assets/053af455-1387-4b69-9a5e-48795eb2ca92" alt="calories vs steps" width="600"/>
+
+This insight is valuable for Bellabeat because it confirms that tracking steps can effectively reflect overall physical engagement. It also supports designing step-based challenges, goal-setting features, or fitness rewards in the Bellabeat app to encourage activity and drive user engagement.
+
+**Hourly Activity**
+
+To understand when users are most physically active, I analyzed hourly calorie data from the 30 FitBit users. I grouped the day into six 4-hour time blocks to simplify patterns in activity. 
+
+The data was transformed and summarized using the `dplyr` package in R with the following code:
+
+```r
+df$ActivityHour <- as.POSIXct(df$ActivityHour, format = "%m/%d/%Y %I:%M:%S %p")
+df$Hour <- as.numeric(format(df$ActivityHour, "%H"))
+
+df$TimeBlock <- cut(
+  df$Hour,
+  breaks = c(-1, 3, 7, 11, 15, 19, 23),
+  labels = c("12AM–4AM", "4AM–8AM", "8AM–12PM", "12PM–4PM", "4PM–8PM", "8PM–12AM")
+)
+
+timeblock_summary <- df %>%
+  filter(!is.na(TimeBlock)) %>%
+  group_by(TimeBlock) %>%
+  summarise(TotalCalories = sum(Calories, na.rm = TRUE))
+```
+I then used this summary data to create a bar chart with `ggplot2`, which showed me that users burned the most calories during the 4 PM – 8 PM time block, suggesting this is when they are typically most active.
+
+<img src="https://github.com/user-attachments/assets/a54dfdcb-babf-4fe3-8b55-0f488d3b658b" alt="total calories" width="600"/>
+
+
 
 
 ## Recommendations
-
-1. **Target Early Risers:**  
-   Promote features that align with morning wellness routines.
-
-2. **Sleep-Linked Messaging:**  
-   Highlight how Bellabeat devices support sleep tracking and stress reduction.
-
-3. **Weekend Engagement Campaigns:**  
-   Encourage weekend movement through gamified challenges.
-
-4. **Cross-Product Promotion:**  
-   Leverage synergies between Time, Leaf, and Spring by offering bundled usage tips in the app.
-
-5. **Personalized Insights:**  
-   Expand app features to highlight correlations between sleep, hydration, and activity for members.
-
----
-
-## 🗂️ Deliverables Summary
-
-- ✅ Clear business task summary
-- ✅ Data source description and evaluation
-- ✅ Cleaning and transformation documentation
-- ✅ Summary of insights with visuals
-- ✅ Marketing recommendations based on analysis
-
----
-
-## 🌐 Portfolio Description (for Website)
-
-> This case study explores smart device usage using public Fitbit data to help Bellabeat make strategic marketing decisions. I cleaned, analyzed, and visualized behavioral data using R and produced actionable recommendations for user engagement and product positioning.
-
----
-
 
